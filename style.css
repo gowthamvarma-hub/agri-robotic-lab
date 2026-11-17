@@ -834,3 +834,52 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 7px 18px rgba(0,0,0,0.10);
 }
+
+/* Project Navigation Buttons */
+
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 35px auto;
+    width: 100%;
+}
+
+.project-tabs .project-tab {
+    display: inline-block;
+    padding: 14px 25px;
+    background-color: #ffffff;
+    color: #1b5e20;
+    border: 2px solid #1b5e20;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-tabs .project-tab:hover,
+.project-tabs .project-tab.active {
+    background-color: #1b5e20;
+    color: #ffffff;
+}
+
+.project-content {
+    display: none;
+}
+
+.project-content.active {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .project-tabs {
+        flex-direction: column;
+    }
+
+    .project-tabs .project-tab {
+        width: 100%;
+    }
+}
