@@ -13,7 +13,8 @@
         <nav class="navbar">
     
 <div class="logo">
-    <img src="images/agrm-logo.jpeg" alt="Laboratory Logo">
+    <img src="images/agrm-logo.jpeg" 
+         alt="Laboratory Logo">
 
     <div class="logo-text">
         <span>Agri-Robotic Machines Laboratory</span>
@@ -178,21 +179,295 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section light" id="projects">
-        <div class="section-heading">
-            <p>OUR WORK</p>
-            <h2>Research Projects</h2>
+
+<!-- Projects Section -->
+<section class="section light" id="projects">
+
+    <div class="section-heading">
+        <p>OUR RESEARCH</p>
+        <h2>Research Projects</h2>
+        <span>Explore our completed and ongoing research initiatives.</span>
+    </div>
+
+    <div class="project-tabs">
+        <button class="project-tab active"
+                onclick="showProjects('completed', this)">
+            Completed Projects
+        </button>
+
+        <button class="project-tab"
+                onclick="showProjects('current', this)">
+            Current Projects
+        </button>
+
+        
+<button class="project-tab"
+        onclick="showProjects('students', this)">
+    Ph.D. & MS Students
+</button>
+
+
+<button class="project-tab"
+        onclick="showProjects('graduated', this)">
+    Graduated Students
+</button>
+
+</div>
+
+    <!-- Completed Projects -->
+    <div id="completed" class="project-content active">
+
+        <h3>Principal Investigator</h3>
+
+        <div class="project-grid">
+            <div class="project-card">Design and Development of a Coconut Testa (Brown Meal) Peeling Machine (Coconut Paring Machine)</div>
+
+            <div class="project-card">Effect of Mechanisation Level on Productivity, Energy and Economics of Small Size Farm (One Hectare)</div>
+
+            <div class="project-card">Optimal In-field Laser Land Leveling Operation for Equal Cut-Fill Ratio and Minimum Travel Path using Particle Swarm Optimization</div>
+
+            <div class="project-card">Vision Guided AI Enabled Robotic Apple Harvester</div>
+
+            <div class="project-card">CFD-Driven Design Optimization of Centrifugal Aerators for Enhanced Water Aeration Efficiency</div>
+
+            <div class="project-card">Training and Capacity Building on Use of Advanced Technologies in Precision Agriculture and Agricultural Mechanization</div>
+
+            <div class="project-card">AI-enabled UAV for Disease Identification and Control in Cotton</div>
+
+            <div class="project-card">Centre of Excellence for Digital Farming Solutions for Enhancing Productivity by Robots, Drones and AGVs</div>
         </div>
 
-        <div class="project-box">
-            <h3>Innovation in Agricultural Automation</h3>
-            <p>
-                Explore our ongoing research, experimental prototypes,
-                robotic systems, and engineering developments.
-            </p>
+        <h3>Co-Principal Investigator</h3>
+
+        <div class="project-grid">
+            <div class="project-card">Development of a Vegetable Transplanter with Robotic Arm for Metering of Pot Seedlings</div>
+
+            <div class="project-card">Development of Solar Energy Operated Agricultural Machinery for Paddy Crop</div>
+
+            <div class="project-card">Drudgery Reducing Machines for FPO in Purulia - Jhalda Agro Producer Company Ltd.</div>
+
+            <div class="project-card">Drudgery Reducing Machines for SHGS in Jharkhand State of India</div>
+
+            <div class="project-card">Establishment of TIH on AI and ML for ICPS</div>
+
+            <div class="project-card">Evaluation of District Skill Development Planning (DSDP) Awards under SANKALP Programme of MSDE</div>
+
+            <div class="project-card">PRECISION FARMING DEVELOPMENT CENTRE</div>
+
+            <div class="project-card">Resolving Gaps in Scaling up of Millet Value Chain for Technical Backstopping Micro Units under PMFME</div>
+
+            <div class="project-card">Rural Spatial Planning in Gram Panchayats</div>
+
+            <div class="project-card">Rural Technology Product Development to TSCST</div>
+
+            <div class="project-card">Smart and Sustainable Water Infrastructure - Management of Water Distribution Network using GIS and Hydraulic Modelling and the Journey to Smart Systems</div>
+
+            <div class="project-card">Synthesis of Steviosides from Stevia and its Application in Development of Low Calorie Grapefruit Jam</div>
+
+            <div class="project-card">Testing of Farm Tyres (Birla)</div>
         </div>
-    </section>
+
+    </div>
+
+    <!-- Current Projects -->
+   
+<!-- Current Projects -->
+<div id="current" class="project-content">
+
+    <h3>Principal Investigator</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h4>Design and Development of a Laser Guided Precision Paddy Planting Device</h4>
+            <p><strong>Organization:</strong> LAND OPTIMIZER INTERNATIONAL PRIVATE LIMITED</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Design and Development of Smart Machines for Agricultural and Other Applications</h4>
+            <p><strong>Organization:</strong> TRICKSHOT SOLUTIONS PRIVATE LIMITED</p>
+        </div>
+
+    </div>
+
+    <h3>Co-Principal Investigator</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h4>Disease Detection and Effective Control using Versatile UAVs and UGVs in Apple Orchard</h4>
+            <p><strong>Organization:</strong> ICAR</p>
+        </div>
+
+        <div class="project-card">
+            <h4>PFDC Project</h4>
+            <p><strong>Organization:</strong> The Director of Horticulture Department of Food Processing Industries and Horticulture</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Rejuvenation of Millet Production and Processing Through Mechanization</h4>
+            <p><strong>Organization:</strong> Department of Science and Technology (DST)</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Ph.D. and MS Students -->
+<div id="students" class="project-content">
+
+    <h3>Ph.D. Students</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h4>Ambuj</h4>
+            <p><strong>Area of Research:</strong> Path Planning Optimization for Agricultural Applications</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Arundhati Boruah</h4>
+            <p><strong>Area of Research:</strong> Data Driven Precision Agriculture</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Ayan Paul</h4>
+            <p><strong>Area of Research:</strong> Robotic Harvester under Controlled Environment</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Basani Nagaraj</h4>
+            <p><strong>Area of Research:</strong> AI enabled Drone Assisted Crop Sprayer</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Lilesh</h4>
+            <p><strong>Area of Research:</strong> Not specified</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Mihil Rasikbhai Paghadar</h4>
+            <p><strong>Area of Research:</strong> Automation and Mechanization in Precision Agriculture</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Pooja Verma</h4>
+            <p><strong>Area of Research:</strong> Computer Vision and Machine Learning Applications for Crop Maturity Determination</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Ravi Shankar Singh</h4>
+            <p><strong>Area of Research:</strong> Design and Development of Agricultural Machines</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Sudhir Karale</h4>
+            <p><strong>Area of Research:</strong> Food Process Engineering</p>
+        </div>
+
+        <div class="project-card">
+            <h4>V Balaji</h4>
+            <p><strong>Area of Research:</strong> Agri-Robotics in Precision Agriculture</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Vasudev Kumawat</h4>
+            <p><strong>Area of Research:</strong> Agri-UAVs in Precision Agriculture</p>
+        </div>
+
+    </div>
+
+    <h3>MS Students</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h4>Nuha Mohammed Adelkhier Elshiakh</h4>
+            <p><strong>Area of Research:</strong> Agricultural Machinery</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Graduated Students -->
+<div id="graduated" class="project-content">
+
+    <h3>Ph.D. Students</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h4>Abhishek Ranjan (2025)</h4>
+            <p><strong>Area of Research:</strong> Solar Energy Operated Equipment for Horticultural Crops</p>
+            <p><strong>Thesis Title:</strong> Remotely Operated Fully Automatic Smart Mango Harvester</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Bhavya B (2024)</h4>
+            <p><strong>Area of Research:</strong> Food Process Engineering</p>
+            <p><strong>Thesis Title:</strong> Automation of Crack Detection and Grading of Chicken Eggs Using Computer Vision and Robotics</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Chaitanya Madhaw Pareek (2024)</h4>
+            <p><strong>Area of Research:</strong> Precision Agriculture and Farm Mechanization</p>
+            <p><strong>Thesis Title:</strong> Development of An Electronically Controlled Precision Planter (E-Planter) for Cotton Crop</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Chanchal Gupta (2024)</h4>
+            <p><strong>Area of Research:</strong> Precision Agriculture</p>
+            <p><strong>Thesis Title:</strong> Design and Development of a Self-Propelled Chili Pepper Harvester</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Harsh Nagar (2025)</h4>
+            <p><strong>Area of Research:</strong> Artificial Intelligence Applications in Agricultural Mechanisation</p>
+            <p><strong>Thesis Title:</strong> An AI-IoT Based Real-Time Tractor Engine and Field Performance Monitoring cum Advisory System for Optimum Tillage</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Jayraj P (2021)</h4>
+            <p><strong>Area of Research:</strong> Aquaculture Equipment Development</p>
+            <p><strong>Thesis Title:</strong> Development of a Small-scale Fish Filleting Machine for Rohu (Labeo rohita) Fish</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Neeraj Kumar (2019)</h4>
+            <p><strong>Area of Research:</strong> Energy from biofuels</p>
+            <p><strong>Thesis Title:</strong> Cerium Oxide Nanoparticles Added Water Emulsified Mahua Biodiesel Blend and its Performance in Diesel Engine</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Subha Manash Roy (2023)</h4>
+            <p><strong>Area of Research:</strong> Aeration System</p>
+            <p><strong>Thesis Title:</strong> Development of an Efficient Perforated Pooled Circular Stepped Cascade (PPCSC) Aeration System for Sustainable Aquaculture</p>
+        </div>
+
+        <div class="project-card">
+            <h4>Vinod Choudhary (2024)</h4>
+            <p><strong>Area of Research:</strong> Design and Development of Agricultural Machines</p>
+            <p><strong>Thesis Title:</strong> Design and Development of a Fully Automatic Paddy Seedling Mat Preparing Machine</p>
+        </div>
+
+    </div>
+
+    <h3>MS Students</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h4>William Wachira Mwangi (2025)</h4>
+            <p><strong>Area of Research:</strong> Computer aided design of Agricultural Machines</p>
+            <p><strong>Thesis Title:</strong> Design and Development of a Robotic Arm Gripper for Transplanting Tomato Seedlings</p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
 <!-- FACULTY PROFILE SECTION -->
 <section id="professor" class="professor-section">
 
@@ -205,6 +480,7 @@
             <!-- Professor Photograph -->
             <div class="professor-photo">
                 <img src="images/professor.jpg"
+                     alt="Professor">
                      alt="Dr. Rajendra Machavaram">
             </div>
 

@@ -23,3 +23,17 @@ localStorage.setItem("visitorCount", visitors);
 
 document.getElementById("visitor-count").textContent = visitors;
 
+function showProjects(projectType, clickedButton) {
+    document.querySelectorAll('.project-content').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    document.querySelectorAll('.project-tab').forEach(button => {
+        button.classList.remove('active');
+    });
+
+    document.getElementById(projectType).classList.add('active');
+
+    clickedButton.classList.add('active');
+}
+
