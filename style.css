@@ -883,3 +883,81 @@ body {
         width: 100%;
     }
 }
+
+/* kgp logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.logo .iit-logo,
+.logo .lab-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Move Header Logo Group Slightly Left */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0px;
+    margin-left: -50px;
+    flex-shrink: 0;
+}
+
+.logo .iit-logo,
+.logo .lab-logo {
+    width: 83px;
+    height: 83px;
+    object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+}
+/* AGRM Laboratory Logo Watermark */
+
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 420px;
+    height: 420px;
+    background-image: url("images/agrm-watermark.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.10;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Keep website content above the watermark */
+header,
+nav,
+section,
+footer {
+    position: relative;
+    z-index: 1;
+}
