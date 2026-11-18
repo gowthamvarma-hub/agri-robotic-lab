@@ -1,4 +1,8 @@
 
+/* =========================================
+   1. GLOBAL WEBSITE SETTINGS
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,157 +11,211 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-y: auto;
 }
 
 body {
     font-family: Arial, sans-serif;
     color: #26352c;
     line-height: 1.7;
+    display: block;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
-header {
+
+/* =========================================
+   2. HEADER AND NAVIGATION
+========================================= */
+
+.site-header {
+    width: 100%;
     background: #ffffff;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .navbar {
-    max-width: 1200px;
+    max-width: 1400px;
+    min-height: 95px;
     margin: auto;
-    padding: 18px 25px;
+    padding: 12px 4%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 25px;
 }
 
+/* Laboratory Logo and Name */
+
 .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0px;
     text-decoration: none;
-    color: #155c36;
-    font-size: 21px;
-    font-weight: bold;
+    flex-shrink: 0;
+    margin-left: -40;
 }
+
+.logo .iit-logo,
+.logo .lab-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text span {
+    color: #174b27;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo-text small {
+    color: #666666;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Navigation Links */
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 22px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
+    color: #333333;
     text-decoration: none;
-    color: #333;
     font-size: 14px;
     font-weight: 600;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #239653;
+    color: #26833e;
 }
 
-.menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 26px;
-    cursor: pointer;
-}
+
+/* =========================================
+   3. HOME / HERO SECTION
+========================================= */
 
 .hero {
+    width: 100%;
     min-height: 570px;
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 80px 10%;
+    padding: 80px 8%;
+
     background:
-    linear-gradient(90deg, rgba(5,35,19,.90),
-    rgba(5,35,19,.40)),
-    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800")
-    center/cover;
-    color: white;
+        linear-gradient(
+            rgba(0, 0, 0, 0.58),
+            rgba(0, 0, 0, 0.58)
+        ),
+        url("images/agriculture.jpg") center/cover no-repeat;
+
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent;
 }
 
 .hero-content {
-    max-width: 700px;
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    color: #ffffff;
+    text-align: left;
 }
 
-.tagline {
-    color: #a8e6b9;
-    font-weight: bold;
-    letter-spacing: 3px;
-    font-size: 13px;
+.hero .tagline {
+    color: #d7edc8;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
 }
 
 .hero h1 {
-    font-size: clamp(38px, 5vw, 65px);
-    line-height: 1.15;
-    margin: 20px 0;
+    color: #ffffff;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 22px;
 }
 
 .hero h1 span {
-    color: #8ee5a7;
+    color: #a7d879;
 }
 
-.hero-content > p:not(.tagline) {
-    max-width: 580px;
-    color: #eeeeee;
+.hero-description {
+    color: #f1f1f1;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 650px;
     margin-bottom: 30px;
 }
 
+/* Home Page Buttons */
 
+.hero-buttons {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
-
-/* Arrange hero buttons vertically */
-
-
-
-.hero-content {
-    text-align: left !important;
-    align-items: flex-start !important;
-}
-
-.hero .hero-buttons {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
-    margin-left: 90px !important;
-    width: 100%;
 }
 
-.hero .hero-buttons .btn {
-    width: auto;
-    min-width: 160px;
-    text-align: center;
-}
-
-
-.btn {
+.hero-buttons .btn {
     display: inline-block;
+    padding: 14px 24px;
+    border-radius: 4px;
     text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-.primary {
-    background: #25884d;
-    color: white;
+    font-weight: 600;
+    text-align: center;
+    min-width: 160px;
 }
 
-.secondary {
-    border: 1px solid white;
-    color: white;
+.hero-buttons .btn.primary {
+    background: #347d35;
+    color: #ffffff;
 }
+
+.hero-buttons .btn.secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+}
+
+.hero-buttons .btn:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================================
+   4. COMMON SECTION SETTINGS
+========================================= */
 
 .section {
+    width: 100%;
     padding: 85px 8%;
-}
-
-.light {
-    background: #f3f7f3;
 }
 
 .section-heading {
@@ -177,574 +235,768 @@ header {
     color: #174d30;
 }
 
-.about-content {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.about-content h3 {
-    margin-bottom: 15px;
-    font-size: 24px;
-}
-
-.about-card {
-    padding: 35px;
-    background: #e5f2e8;
-    border-left: 5px solid #25884d;
-    border-radius: 8px;
-}
-
-.cards {
-    max-width: 1150px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-}
-
-.card {
-    background: white;
-    padding: 28px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.06);
-    transition: transform .3s;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-}
-
-.card span {
-    font-size: 35px;
-}
-
-.card h3 {
-    margin: 15px 0 10px;
-    color: #185d36;
-}
-
-.machine {
-    min-height: 180px;
-}
-
-.project-box {
-    max-width: 850px;
-    margin: auto;
-    padding: 40px;
-    background: white;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.project-box h3 {
-    color: #185d36;
-    margin-bottom: 12px;
-}
-
-.contact {
-    text-align: center;
-    background: #eaf3eb;
-}
-
-.contact > p {
-    margin-bottom: 25px;
-}
-
-footer {
-    background: #123d27;
-    color: white;
-    text-align: center;
-    padding: 35px 15px;
-}
-
-footer p {
-    font-size: 13px;
-    margin-top: 8px;
-    color: #d4e6d9;
-}
-
-@media (max-width: 850px) {
-    .menu-btn {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 20px 30px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 550px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding: 65px 7%;
-    }
-
-    .section {
-        padding: 60px 7%;
-    }
-
-    .logo {
-        font-size: 16px;
-    }
-}
-
-/* Navigation Bar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 5%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Laboratory Logo */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo img {
-    width: 85px;
-    height: 85px;
-    object-fit: contain;
-}
-
-.logo span {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1b5e20;
-}
-
-/* Navigation Links */
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333333;
-    font-weight: 600;
-}
-
-.nav-links a:hover {
-    color: #2e7d32;
-}
-
-/* Home Hero Section */
-.hero {
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(
-        rgba(0, 50, 20, 0.75),
-        rgba(0, 50, 20, 0.75)
-    ),
-    url("images/agriculture.jpg");
-
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-.hero-content {
-    max-width: 850px;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.hero h2 {
-    font-size: 25px;
-    color: #c5e1a5;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
+.section-heading span {
+    display: block;
+    color: #666666;
+    font-size: 16px;
     line-height: 1.7;
-    margin-bottom: 30px;
+    margin-top: 12px;
 }
-
-.hero-button {
-    display: inline-block;
-    background-color: #8bc34a;
-    color: #173b17;
-    padding: 14px 28px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
+.light {
+    background: transparent !important;
 }
+/* =========================================
+   5. ABOUT OUR LABORATORY
+========================================= */
 
-.hero-button:hover {
-    background-color: #aed581;
-}
-
-/* About Laboratory Section */
 .about-section {
-    padding: 70px 8%;
-    background-color: #f5f8f4;
+    padding: 85px 8%;
+    background: transparent;
     text-align: center;
 }
 
 .about-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
 }
 
 .about-section h2 {
-    font-size: 32px;
-    color: #1b5e20;
-    margin-bottom: 20px;
+    font-size: 36px;
+    color: #174b27;
+    margin-bottom: 18px;
 }
 
 .about-intro {
+    max-width: 900px;
+    margin: 0 auto 55px;
+    color: #555555;
     font-size: 17px;
-    line-height: 1.8;
-    color: #444;
-    max-width: 850px;
-    margin: 0 auto 40px;
+    line-height: 1.9;
 }
 
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 45px;
+    align-items: center;
+    text-align: left;
+}
+
+.about-content h3 {
+    color: #174b27;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+/* About Vision, Mission and Objectives Cards */
+
 .about-cards {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
 }
 
 .about-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    flex: 1;
-    min-width: 220px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    background: #ffffff;
+    padding: 25px 28px;
+    border-left: 5px solid #39834a;
+    border-radius: 7px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
 }
 
 .about-card h3 {
-    color: #2e7d32;
-    margin-bottom: 15px;
-}
-
-.about-card p {
-    color: #555;
-    line-height: 1.7;
-}
-
-/* FIX WEBSITE SCROLLING AND SECTION LAYOUT */
-
-html {
-    scroll-behavior: smooth;
-    overflow-y: auto !important;
-}
-
-body {
-    display: block !important;
-    height: auto !important;
-    min-height: 100%;
-    overflow-y: auto !important;
-    overflow-x: hidden;
-    margin: 0;
-}
-
-#home,
-#about {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 500px;
-    box-sizing: border-box;
-    flex: none !important;
-}
-
-.hero {
-    width: 100%;
-    min-height: 500px;
-}
-
-.about-section {
-    width: 100%;
-    padding: 70px 8%;
-    box-sizing: border-box;
-}
-
-/* FACULTY PROFILE */
-.professor-section {
-    padding: 70px 8%;
-    background: #f4f7f2;
-}
-
-.professor-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.professor-section h2 {
-    text-align: center;
-    color: #1b5e20;
-    font-size: 34px;
-    margin-bottom: 40px;
-}
-
-.professor-card {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    background: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-.professor-photo {
-    flex: 0 0 250px;
-}
-
-.professor-photo img {
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.professor-details h3 {
-    font-size: 28px;
-    color: #1b5e20;
+    color: #26733a;
+    font-size: 21px;
     margin-bottom: 10px;
 }
 
+.about-card p {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =========================================
+   6. RESEARCH AREAS
+========================================= */
+
+.research-intro {
+    display: block;
+    max-width: 750px;
+    margin: 15px auto 0;
+    color: #666666;
+    font-size: 16px;
+    text-align: center;
+}
+
+.research-area-grid {
+    max-width: 1250px;
+    margin: 45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.research-area-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.research-area-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.research-area-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.research-area-content {
+    padding: 24px;
+}
+
+.research-area-content h3 {
+    color: #1b5e20;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.research-area-content p {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   7. ROBOTIC MACHINES
+========================================= */
+
+.machine-grid {
+    max-width: 1150px;
+    margin: 45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.machine-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.machine-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.machine-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.machine-content {
+    padding: 25px;
+}
+
+.machine-content h3 {
+    color: #1b5e20;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.machine-content p {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   8. RESEARCH PROJECTS
+========================================= */
+
+#projects {
+    padding: 85px 7%;
+    background: #f7f9f6;
+}
+
+#projects .section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#projects .section-heading h2 {
+    color: #174b27;
+    font-size: 36px;
+}
+
+#projects .section-heading span {
+    display: block;
+    color: #666666;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+/* Project Navigation Tabs */
+
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 35px auto 45px;
+    width: 100%;
+}
+
+.project-tab {
+    display: inline-block;
+    padding: 13px 23px;
+    border: 1px solid #26733a;
+    background: #ffffff;
+    color: #26733a;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.project-tab:hover,
+.project-tab.active {
+    background: #26733a;
+    color: #ffffff;
+}
+
+/* Project Content */
+
+.project-content {
+    display: none;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.project-content.active {
+    display: block;
+    animation: projectFade 0.4s ease;
+}
+
+@keyframes projectFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-content > h3 {
+    color: #174b27;
+    font-size: 23px;
+    margin: 35px 0 22px;
+    padding-left: 14px;
+    border-left: 4px solid #39834a;
+}
+
+/* Project Cards */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e5e9e4;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    color: #444444;
+    font-size: 15px;
+    line-height: 1.8;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9px 22px rgba(0,0,0,0.09);
+    border-color: #39834a;
+}
+
+.project-card h4 {
+    color: #1b5e20;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #555555;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   9. AGRICULTURE NEWS
+========================================= */
+
+.news-section {
+    padding: 85px 7%;
+    background: #f5f8f5;
+}
+
+.news-section .section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.news-section .section-heading p {
+    color: #39834a;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.news-section .section-heading h2 {
+    color: #174b27;
+    font-size: 35px;
+    margin: 12px 0;
+}
+
+.news-section .section-heading span {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.news-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.news-card {
+    background: #ffffff;
+    border: 1px solid #e1e8e1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    transition: 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.news-content {
+    padding: 24px;
+}
+
+.news-content h3 {
+    color: #174b27;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.news-content p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.news-content a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #26733a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.news-content a:hover {
+    text-decoration: underline;
+}
+
+.news-date {
+    color: #39834a;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   10. FACULTY PROFILE
+========================================= */
+
+.professor-section {
+    padding: 85px 7%;
+    background: #ffffff;
+}
+
+.professor-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.professor-section .section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.professor-section .section-heading h2 {
+    color: #174b27;
+    font-size: 36px;
+}
+
+/* Professor Information */
+
+.professor-card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 45px;
+    align-items: center;
+    background: #f7f9f6;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.professor-photo img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.professor-details h3 {
+    color: #174b27;
+    font-size: 29px;
+    margin: 12px 0;
+}
+
 .professor-details h4 {
-    color: #388e3c;
+    color: #39834a;
+    font-size: 19px;
 }
 
 .professor-details p {
+    color: #555555;
     line-height: 1.8;
-    color: #444;
+    margin: 12px 0;
 }
 
 .professor-details a {
-    color: #2e7d32;
+    color: #26733a;
+}
+
+.faculty-label,
+.faculty-section-heading > p {
+    color: #39834a;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Faculty Buttons */
+
+.faculty-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
 }
 
 .department-button {
     display: inline-block;
-    background: #2e7d32;
-    color: white !important;
-    padding: 12px 20px;
-    border-radius: 5px;
+    padding: 12px 18px;
+    background: #26733a;
+    color: #ffffff !important;
     text-decoration: none;
-    margin-top: 12px;
+    border-radius: 5px;
+    font-weight: 600;
 }
 
-/* EXPERIENCE */
-.experience-section {
-    margin-top: 50px;
+.department-button:hover {
+    background: #174b27;
 }
 
-.experience-section h3 {
-    font-size: 27px;
-    color: #1b5e20;
-    margin-bottom: 25px;
-}
+/* Faculty Experience */
 
-.experience-item {
-    background: white;
-    padding: 20px 25px;
-    margin-bottom: 18px;
-    border-left: 4px solid #4caf50;
-    border-radius: 6px;
-}
-
-.experience-item h4 {
-    color: #1b5e20;
-    margin-bottom: 8px;
-}
-
-.experience-item p {
-    color: #555;
-    line-height: 1.6;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 700px) {
-    .professor-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .professor-photo img {
-        width: 220px;
-        height: 260px;
-    }
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.logo-text span {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1b5e20;
-}
-
-.logo-text small {
-    font-size: 14px;
-    color: #555;
-    font-weight: 500;
-}
-
-/* RESEARCH EXPERTISE */
-
-.research-expertise,
+.experience-section,
+.research-expertise-section,
 .publications-section {
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
-.research-expertise h3,
-.publications-section h3 {
-    font-size: 27px;
-    color: #1b5e20;
-    margin-bottom: 25px;
+.faculty-section-heading {
+    margin-bottom: 30px;
 }
 
-.research-grid {
+.faculty-section-heading h3 {
+    color: #174b27;
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+.experience-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-.research-card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    border-left: 4px solid #4caf50;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+.experience-item {
+    padding: 23px;
+    background: #f7f9f6;
+    border-left: 4px solid #39834a;
+    border-radius: 6px;
 }
 
-.research-card h4 {
-    color: #2e7d32;
+.experience-item h4 {
+    color: #174b27;
+    font-size: 17px;
     margin-bottom: 10px;
 }
 
-.research-card p {
-    color: #555;
-    line-height: 1.6;
+.experience-item p {
+    color: #666666;
+    margin-bottom: 8px;
 }
 
-/* PUBLICATIONS */
+.experience-item span {
+    color: #39834a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Research Expertise Cards */
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.research-card {
+    padding: 25px;
+    background: #f7f9f6;
+    border-radius: 8px;
+    border-bottom: 4px solid #39834a;
+    transition: 0.3s;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+}
+
+.research-card h4 {
+    color: #174b27;
+    margin-bottom: 12px;
+}
+
+.research-card p {
+    color: #555555;
+    line-height: 1.7;
+}
+
+/* Selected Publications */
 
 .publication-item {
-    background: white;
-    padding: 20px;
+    padding: 20px 22px;
     margin-bottom: 15px;
-    border-radius: 7px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: #f7f9f6;
+    border-left: 4px solid #39834a;
+    border-radius: 5px;
 }
 
 .publication-item p {
-    color: #333;
+    color: #444444;
     line-height: 1.7;
 }
 
 .publication-item span {
-    color: #388e3c;
+    display: block;
+    margin-top: 8px;
+    color: #39834a;
     font-size: 14px;
 }
 
 .publication-links {
-    margin-top: 25px;
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
 }
 
 .publication-links a {
-    background: #2e7d32;
-    color: white;
-    padding: 12px 20px;
+    padding: 12px 18px;
+    background: #26733a;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .publication-links a:hover {
-    background: #1b5e20;
+    background: #174b27;
 }
 
-@media (max-width: 700px) {
-    .research-grid {
-        grid-template-columns: 1fr;
-    }
-}
+
+/* =========================================
+   11. CONTACT SECTION AND FORM
+========================================= */
 
 .contact-section {
-    padding: 60px 8%;
+    padding: 85px 7%;
+    background: #f5f8f5;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-section .section-heading {
     text-align: center;
-    background-color: #f5f8f4;
+    margin-bottom: 40px;
 }
 
-.contact-section h2 {
-    color: #1b5e20;
-    font-size: 32px;
-    margin-bottom: 20px;
+.contact-section .section-heading p {
+    color: #39834a;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 13px;
 }
 
-.contact-info {
-    max-width: 600px;
-    margin: 30px auto 0;
-    padding: 25px;
-    background: white;
+.contact-section .section-heading h2 {
+    color: #174b27;
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.contact-section .section-heading span {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Contact Form Card */
+
+.contact-form-card {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+    background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e3e9e3;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-.contact-info a {
-    color: #1b5e20;
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: #174b27;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d5ddd5;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #39834a;
+    box-shadow: 0 0 0 2px rgba(57,131,74,0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Send Message Button */
+
+.contact-submit {
+    background: #26733a;
+    color: #ffffff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-submit:hover {
+    background: #174b27;
+}
+
+/* Laboratory Email */
+
+.contact-email {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+    color: #555555;
+}
+
+.contact-email a {
+    color: #26733a;
     text-decoration: none;
+    margin-left: 5px;
+    font-weight: 600;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-}
+
+/* =========================================
+   12. VISITOR COUNTER
+========================================= */
 
 .visitor-counter {
     text-align: center;
@@ -759,7 +1011,7 @@ body {
 }
 
 .visitor-counter p {
-    color: #555;
+    color: #555555;
 }
 
 .visitor-counter span {
@@ -768,196 +1020,269 @@ body {
     color: #1b5e20;
 }
 
-/* Research Projects Tabs */
 
-.project-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 35px 0;
-    flex-wrap: wrap;
+/* =========================================
+   13. FOOTER
+========================================= */
+
+.site-footer {
+    background: #123c20;
+    color: #ffffff;
+    padding: 55px 7% 20px;
 }
 
-.project-tab {
-    padding: 14px 30px;
-    border: 2px solid #1b5e20;
-    background: white;
-    color: #1b5e20;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.project-tab:hover,
-.project-tab.active {
-    background: #1b5e20;
-    color: white;
-}
-
-.project-content {
-    display: none;
-    margin-top: 30px;
-}
-
-.project-content.active {
-    display: block;
-}
-
-.project-content h3 {
-    color: #1b5e20;
-    font-size: 23px;
-    margin: 35px 0 20px;
-    border-left: 5px solid #4caf50;
-    padding-left: 15px;
-}
-
-.project-grid {
+.footer-container {
+    max-width: 1250px;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1.5fr 1fr 1.3fr;
+    gap: 45px;
 }
 
-.project-card {
-    background: white;
-    padding: 24px;
-    border: 1px solid #e0e8e0;
-    border-radius: 8px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-    color: #333;
-    line-height: 1.7;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 7px 18px rgba(0,0,0,0.10);
-}
-
-/* Project Navigation Buttons */
-
-.project-tabs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 35px auto;
-    width: 100%;
-}
-
-.project-tabs .project-tab {
-    display: inline-block;
-    padding: 14px 25px;
-    background-color: #ffffff;
-    color: #1b5e20;
-    border: 2px solid #1b5e20;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.project-tabs .project-tab:hover,
-.project-tabs .project-tab.active {
-    background-color: #1b5e20;
+.site-footer h3 {
+    font-size: 19px;
+    margin-bottom: 20px;
     color: #ffffff;
 }
 
-.project-content {
-    display: none;
+.site-footer p {
+    color: #d5e2d7;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 12px;
 }
 
-.project-content.active {
-    display: block;
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
 }
+
+.footer-links a,
+.footer-contact a {
+    color: #d5e2d7;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #a8d5a8;
+}
+
+.footer-bottom {
+    max-width: 1250px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+/* WATERMARK AREA */
+
+.watermark-area {
+    position: relative;
+    isolation: isolate;
+}
+
+.watermark-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("images/agrm-watermark.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px;
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.2s ease;
+}
+.watermark-bg.watermark-visible {
+    opacity: 0.10;
+}
+.watermark-area > section {
+    position: relative;
+    z-index: 1;
+    background: transparent !important;
+}
+
+/* =========================================
+   15. RESPONSIVE DESIGN
+========================================= */
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 1000px) {
+
+    .research-area-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .machine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .professor-card {
+        grid-template-columns: 1fr;
+    }
+
+    .professor-photo {
+        max-width: 320px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile screens */
 
 @media (max-width: 600px) {
+
+    .hero {
+        min-height: 500px;
+        padding: 60px 6%;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .about-section {
+        padding: 60px 5%;
+    }
+
+    .about-section h2,
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .research-area-grid,
+    .machine-grid,
+    .project-grid,
+    .news-grid,
+    .experience-grid,
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
     .project-tabs {
         flex-direction: column;
     }
 
-    .project-tabs .project-tab {
+    .project-tab {
         width: 100%;
     }
-}
 
-/* kgp logo */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0px;
-}
+    #projects {
+        padding: 60px 5%;
+    }
 
-.logo .iit-logo,
-.logo .lab-logo {
-    width: 85px;
-    height: 85px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
+    .professor-section {
+        padding: 60px 5%;
+    }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    .professor-card {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        text-align: center;
+    }
 
+    .professor-photo {
+        max-width: 250px;
+        margin: auto;
+    }
 
-/* Move Header Logo Group Slightly Left */
+    .professor-photo img {
+        height: 260px;
+    }
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0px;
-    margin-left: -50px;
-    flex-shrink: 0;
-}
+    .professor-details h3 {
+        font-size: 24px;
+    }
 
-.logo .iit-logo,
-.logo .lab-logo {
-    width: 83px;
-    height: 83px;
-    object-fit: contain;
-}
+    .faculty-buttons {
+        justify-content: center;
+    }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    white-space: nowrap;
-}
-/* AGRM Laboratory Logo Watermark */
+    .contact-section {
+        padding: 60px 5%;
+    }
 
-body {
-    position: relative;
-}
+    .contact-form-card {
+        padding: 25px 18px;
+    }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 420px;
-    height: 420px;
-    background-image: url("images/agrm-watermark.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    opacity: 0.10;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 0;
-}
+    .contact-email a {
+        display: block;
+        margin: 8px 0 0;
+    }
 
-/* Keep website content above the watermark */
-header,
-nav,
-section,
-footer {
-    position: relative;
-    z-index: 1;
+    .news-section {
+        padding: 60px 5%;
+    }
+
+    .news-section .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .site-footer {
+        padding: 45px 6% 20px;
+    }
 }
