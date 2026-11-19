@@ -91,7 +91,7 @@ data = {
 }
 
 # Save news.json in the same folder as this Python file
-output_file = Path(__file__).resolve().parent / "news.json"
+output_file = Path.cwd() / "news.json"
 
 with open(output_file, "w", encoding="utf-8") as file:
     json.dump(

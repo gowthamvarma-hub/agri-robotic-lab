@@ -22,8 +22,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install feed parser
-        run: pip install feedparser
+      - name: Install dependencies
+        run: pip install feedparser requests
 
       - name: Fetch agriculture news
         run: python fetch_news.py
